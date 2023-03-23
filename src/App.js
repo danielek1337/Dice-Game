@@ -162,7 +162,7 @@ function App() {
         <p>{seconds.toString().padStart(2, "0")}</p>
       </div>
 
-      <div className="scoreboard">
+      <div className="scoreboard-container">
         <h2>Your scores</h2>
         {scoreElements}
       </div>
