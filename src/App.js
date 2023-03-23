@@ -56,6 +56,7 @@ function App() {
         {
           rolls: rollCount,
           time: time,
+          score: rollCount * time,
         },
       ]);
       setTenzies(false);
@@ -76,6 +77,7 @@ function App() {
     }
   }
 
+  console.log(scores);
   function holdDice(id) {
     setDice((prevDice) =>
       prevDice.map((die) => {
@@ -120,9 +122,26 @@ function App() {
       holdDice={() => holdDice(die.id)}
     />
   ));
-
+  // sorting scores function
+  function compare(a, b) {
+    if (a.score < b.score) {
+      return -1;
+    }
+    if (a.score > b.score) {
+      return 1;
+    }
+    return 0;
+  }
+  //end of sorting scores function
+  //sorting scores array by score property
+  scores.sort(compare);
   const scoreElements = scores.map((score) => (
-    <Scoreboard time={score.time} rolls={score.rolls} key={score.time} />
+    <Scoreboard
+      time={score.time}
+      rolls={score.rolls}
+      key={score.time}
+      score={score.score}
+    />
   ));
 
   return (

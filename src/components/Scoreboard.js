@@ -1,13 +1,13 @@
 import React from "react";
 
-export default function Scoreboard(props) {
-  const time = (props.time / 100).toFixed(2);
+export default function Scoreboard({ time, rolls }) {
+  const calculatedTime = (time / 100).toFixed(2);
 
   return (
     <>
       <ul>
         <li>
-          Rolls:{props.rolls} Time:{time} s
+          Rolls: <b>{rolls}</b> Time: <b>{calculatedTime} s</b>
         </li>
       </ul>
     </>

@@ -10,7 +10,7 @@ body {
   padding: 20px;
   display: flex;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 
@@ -87,5 +87,6 @@ body {
 
 .scoreboard{
   background-color: #F5F5F5;
-  
+  padding: 10px;
+  margin: 10px;
 }
